@@ -1,0 +1,28 @@
+.header {
+  margin: 3rem 8rem;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+.menu img {
+  margin-right: 2rem;
+}
+.menu a {
+  text-decoration: none;
+  margin-right: 1rem;
+  color: hsl(255, 11%, 22%);
+}
+.menu button {
+  border: none;
+  background: hsl(180, 66%, 49%);
+  color: #fff;
+  width: 75px;
+  height: 30px;
+  border-radius: 20px;
+}
