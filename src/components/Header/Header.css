@@ -1,10 +1,12 @@
 .header {
-  margin: 3rem 8rem;
+  margin: 3rem 0 0 8rem;
 }
 .menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 500;
+  margin-right: 8rem;
 }
 .menu-left {
   display: flex;
@@ -17,16 +19,38 @@
   text-decoration: none;
   margin-right: 1.5rem;
   color: #9998a0;
-  font-weight: 500;
+  cursor: pointer;
 }
 .menu a:hover {
   color: hsl(255, 11%, 22%);
 }
 .menu button {
-  border: none;
-  background: hsl(180, 66%, 49%);
-  color: #fff;
-  width: 75px;
-  height: 30px;
-  border-radius: 20px;
+  width: 85px;
+  height: 35px;
+  border-radius: 25px;
+}
+.menu button:hover,
+.title button:hover {
+  background: #99e3e2;
+}
+
+.header-content {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+}
+.header-content h1 {
+  font-size: 55px;
+  font-weight: 700;
+  color: hsl(260, 8%, 14%);
+  line-height: 1.1;
+}
+.title {
+  margin-right: 5rem;
+}
+.title button {
+  width: 140px;
+  height: 35px;
+  border-radius: 25px;
+  margin-top: 2rem;
 }
