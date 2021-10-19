@@ -15,7 +15,11 @@
 }
 .menu a {
   text-decoration: none;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  color: #9998a0;
+  font-weight: 500;
+}
+.menu a:hover {
   color: hsl(255, 11%, 22%);
 }
 .menu button {
