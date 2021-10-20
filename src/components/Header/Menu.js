@@ -7,13 +7,13 @@ const Menu = () => {
     <div className="menu">
       <div className="menu-left">
         <img src={logo} alt="" />
-        <a href="">Features</a>
-        <a href="">Pricing</a>
-        <a href="">Resources</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#resources">Resources</a>
       </div>
 
       <div className="menu-right">
-        <a href="">Login</a>
+        <a href="#login">Login</a>
         <button>Sign Up</button>
       </div>
     </div>

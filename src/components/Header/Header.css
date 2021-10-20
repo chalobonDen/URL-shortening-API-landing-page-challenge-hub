@@ -29,10 +29,6 @@
   height: 35px;
   border-radius: 25px;
 }
-.menu button:hover,
-.title button:hover {
-  background: #99e3e2;
-}
 
 .header-content {
   margin-top: 5rem;
@@ -50,7 +46,7 @@
 }
 .title button {
   width: 140px;
-  height: 35px;
+  height: 40px;
   border-radius: 25px;
   margin-top: 2rem;
 }
