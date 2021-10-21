@@ -1,3 +1,6 @@
+main {
+  background: #f0f1f6;
+}
 .main-shortlink {
   margin: 3rem 8rem;
 }
@@ -26,4 +29,24 @@
   width: 12%;
   height: 40px;
   border-radius: 6px;
+}
+
+.link-url {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0 1.5rem;
+
+  background: #fff;
+  height: 55px;
+}
+.link-right {
+  display: flex;
+}
+.link-right > button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 3px;
+  margin-left: 1rem;
 }
