@@ -1,5 +1,4 @@
 import { memo, useState, createContext, useContext } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import './InputUrl.css';
 
 const InputUrl = () => {
@@ -15,8 +14,6 @@ const InputUrl = () => {
   };
 
   const handleShortLink = () => {
-    // e.preventDefault();
-    console.log(linkContent);
     if (!linkContent) {
       setError('Please add a link');
     } else if (
@@ -75,7 +72,14 @@ const InputUrl = () => {
             </div>
             <div className="link-right">
               <div className="short-link">{shortLink.short_link}</div>
-              <button>Copy</button>
+              <button
+                onClick={() =>
+                  navigator.clipboard.writeText(shortLink.short_link) &&
+                  setCopyState(false)
+                }
+              >
+                Copy
+              </button>
             </div>
           </div>
         ))}
