@@ -1,6 +1,7 @@
 .content {
   color: hsl(260, 8%, 14%);
   background-color: #f0f1f6;
+  padding-bottom: 2rem;
 }
 
 .sub-content {

@@ -19,3 +19,48 @@
   border-radius: 25px;
   margin-top: 0.7rem;
 }
+
+.footer-bottom {
+  background: hsl(260, 8%, 14%);
+  padding: 3rem 8rem;
+
+  display: flex;
+  height: 15rem;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.menu-link p,
+.menu-link a {
+  color: #fff;
+  margin-left: 5rem;
+}
+.menu-link a {
+  display: block;
+}
+.menu-link a:hover {
+  color: hsl(180, 66%, 49%);
+}
+.title-manu {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.sub-link {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.social {
+  margin-left: 5rem;
+}
+.social svg {
+  margin-left: 1rem;
+}
+.social img:hover {
+  background: hsl(180, 66%, 49%);
+}
+.icon {
+  fill: #fff;
+}
+.icon:hover {
+  fill: hsl(180, 66%, 49%);
+}
