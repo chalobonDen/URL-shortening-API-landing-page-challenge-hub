@@ -29,7 +29,9 @@
   height: 35px;
   border-radius: 25px;
 }
-
+.burger {
+  display: none;
+}
 .header-content {
   margin-top: 5rem;
   display: flex;
@@ -49,4 +51,45 @@
   height: 40px;
   border-radius: 25px;
   margin-top: 2rem;
+}
+
+@media screen and (max-width: 414px) {
+  .header {
+    margin: 2rem 1rem;
+  }
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .burger img {
+    height: 1.5rem;
+  }
+
+  .header-content {
+    margin-top: 1rem;
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+  }
+  .header-content img {
+    /* margin: 0 1rem; */
+    height: 210px;
+    width: 320px;
+    /* object-fit: cover;
+    object-position: right 75%; */
+  }
+  /* .working {
+    width: 200px;
+  } */
+
+  .header-content h1 {
+    font-size: 40px;
+  }
+  .title {
+    margin-right: 0;
+  }
 }
