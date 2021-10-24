@@ -1,0 +1,21 @@
+.footer {
+  color: #fff;
+}
+.footer-top {
+  background: url('../../images/bg-shorten-desktop.svg');
+  background-color: hsl(257, 27%, 26%);
+  height: 180px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-top button {
+  width: 140px;
+  height: 40px;
+  border-radius: 25px;
+  margin-top: 0.7rem;
+}
