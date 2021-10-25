@@ -64,3 +64,38 @@
 .icon:hover {
   fill: hsl(180, 66%, 49%);
 }
+
+@media screen and (max-width: 414px) {
+  .footer-top {
+    background: url('../../images/bg-shorten-mobile.svg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: hsl(257, 27%, 26%);
+    height: 200px;
+  }
+  .footer-top h1 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    height: fit-content;
+    padding: 5rem 0 7rem;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .menu-link p,
+  .menu-link a {
+    margin-left: 0;
+  }
+  .social {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+  .logo-footer {
+    margin-bottom: 3rem;
+  }
+}
