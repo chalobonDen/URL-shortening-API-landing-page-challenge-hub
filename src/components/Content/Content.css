@@ -72,3 +72,48 @@
   width: 35px;
   height: 35px;
 }
+
+@media screen and (max-width: 414px) {
+  .sub-content {
+    margin: 0 1rem;
+    padding: 2rem 0;
+    width: fit-content;
+    height: fit-content;
+  }
+  .sub-content h1 {
+    font-size: 25px;
+  }
+
+  .detail {
+    flex-direction: column;
+    margin: 3rem 1rem;
+    text-align: center;
+  }
+  .sub-content header {
+    width: fit-content;
+  }
+  .sub-detail h2 {
+    font-size: 18px;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    margin-right: 0;
+    width: fit-content;
+    margin-top: 5.5rem;
+  }
+  .card1 {
+    margin-top: 1rem;
+  }
+  .icons {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .line {
+    height: 90vh;
+    width: 7px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
