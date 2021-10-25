@@ -18,3 +18,9 @@ button {
 button:hover {
   background: #99e3e2;
 }
+
+@media screen and (max-width: 414px) {
+  * {
+    font-size: 14px;
+  }
+}
