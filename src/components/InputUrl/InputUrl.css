@@ -1,8 +1,16 @@
-main {
-  background: #f0f1f6;
-}
 .main-shortlink {
-  margin: 3rem 8rem 0;
+  background-image: linear-gradient(to bottom, #fff 50%, #f0f1f6 50%);
+}
+
+.bg-inputShortlink {
+  margin: 0 8rem;
+}
+.show-result {
+  margin: 0 8rem;
+}
+.main-result {
+  background: #f0f1f6;
+  padding-top: 1rem;
 }
 .input-url {
   background: url('../../images/bg-shorten-desktop.svg');
@@ -35,18 +43,79 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem;
   padding: 0 1.5rem;
 
   background: #fff;
   height: 55px;
 }
+.link-left {
+  font-weight: 500;
+}
 .link-right {
   display: flex;
+  align-items: center;
 }
 .link-right > button {
   width: 5rem;
   height: 2rem;
   border-radius: 3px;
   margin-left: 1rem;
+}
+.short-link {
+  color: hsl(180, 66%, 49%);
+}
+@media screen and (max-width: 414px) {
+  .main-shortlink {
+    background-image: linear-gradient(to bottom, #fff 50%, #f0f1f6 50%);
+  }
+  .bg-inputShortlink {
+    margin: 1rem;
+    margin-bottom: 0;
+  }
+  .input-url {
+    padding: 1.2rem;
+    height: fit-content;
+  }
+  .input-url > div {
+    flex-direction: column;
+  }
+  .input-url input {
+    padding-left: 1rem;
+    margin-right: 0;
+    width: 100%;
+  }
+  .input-url button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .show-result {
+    margin: 0 1rem;
+  }
+  .link-url {
+    flex-direction: column;
+    /* padding: 1rem; */
+    padding: 0;
+    height: fit-content;
+    align-items: flex-start;
+  }
+  .link-left {
+    margin: 0.6rem 1rem;
+  }
+  .link-right {
+    flex-direction: column;
+    align-items: flex-start;
+
+    border-style: solid hidden hidden;
+    border-color: hsl(0, 0%, 90%);
+    border-width: 1px;
+  }
+  .short-link {
+    margin: 0.5rem 1rem 0;
+  }
+  .link-right > button {
+    margin-left: 0;
+    width: calc(100vw - 64px);
+    margin: 0.5rem 1rem 1rem;
+  }
 }

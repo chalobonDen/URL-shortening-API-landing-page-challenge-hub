@@ -53,36 +53,42 @@ const InputUrl = () => {
   return (
     <main>
       <div className="main-shortlink">
-        <div className="input-url">
-          <div>
-            <input
-              type="text"
-              value={linkContent}
-              onChange={(event) => onLinkChange(event)}
-              placeholder="Shorten a link here"
-            />
-            <button onClick={() => handleShortLink()}>Shorten it!</button>
+        <div className="bg-inputShortlink">
+          <div className="input-url">
+            <div>
+              <input
+                type="text"
+                value={linkContent}
+                onChange={(event) => onLinkChange(event)}
+                placeholder="Shorten a link here"
+              />
+              <button onClick={() => handleShortLink()}>Shorten it!</button>
+            </div>
           </div>
         </div>
+      </div>
 
-        {multipleShortLinks.map((shortLink, index) => (
-          <div key={index} className="link-url">
-            <div className="link-left">
-              <div className="full-link">{shortLink.original_link}</div>
+      <div className="main-result">
+        <div className="show-result">
+          {multipleShortLinks.map((shortLink, index) => (
+            <div key={index} className="link-url">
+              <div className="link-left">
+                <div className="full-link">{shortLink.original_link}</div>
+              </div>
+              <div className="link-right">
+                <div className="short-link">{shortLink.short_link}</div>
+                <button
+                  onClick={() =>
+                    navigator.clipboard.writeText(shortLink.short_link) &&
+                    setCopyState(false)
+                  }
+                >
+                  Copy
+                </button>
+              </div>
             </div>
-            <div className="link-right">
-              <div className="short-link">{shortLink.short_link}</div>
-              <button
-                onClick={() =>
-                  navigator.clipboard.writeText(shortLink.short_link) &&
-                  setCopyState(false)
-                }
-              >
-                Copy
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );
