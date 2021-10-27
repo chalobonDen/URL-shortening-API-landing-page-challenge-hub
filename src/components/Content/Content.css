@@ -75,7 +75,7 @@
 
 @media screen and (max-width: 414px) {
   .sub-content {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     padding: 2rem 0;
     width: fit-content;
     height: fit-content;
@@ -86,7 +86,7 @@
 
   .detail {
     flex-direction: column;
-    margin: 3rem 1rem;
+    margin: 3rem 1.5rem;
     text-align: center;
   }
   .sub-content header {

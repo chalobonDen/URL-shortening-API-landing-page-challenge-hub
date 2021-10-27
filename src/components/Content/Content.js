@@ -1,9 +1,6 @@
 import React from 'react';
 import './Content.css';
 import Detail from './Detail';
-import recognition from '../../images/icon-brand-recognition.svg';
-import records from '../../images/icon-detailed-records.svg';
-import customizable from '../../images/icon-fully-customizable.svg';
 
 const Content = () => {
   return (
