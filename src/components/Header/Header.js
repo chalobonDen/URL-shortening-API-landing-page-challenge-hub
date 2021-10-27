@@ -13,7 +13,9 @@ const Header = () => {
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </p>
-          <button>Get Started</button>
+          <button>
+            <a href="#shortlink">Get Started</a>
+          </button>
         </div>
         <div className="working">
           <img className="img-working" src={working} alt="" />
