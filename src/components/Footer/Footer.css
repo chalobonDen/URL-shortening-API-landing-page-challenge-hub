@@ -67,11 +67,9 @@
 
 @media screen and (max-width: 414px) {
   .footer-top {
-    background: url('../../images/bg-shorten-mobile.svg');
-    background-repeat: repeat-y;
-    background-size: cover;
+    background: url('../../images/bg-boost-mobile.svg');
     background-color: hsl(257, 27%, 26%);
-    height: 200px;
+    height: 300px;
   }
   .footer-top h1 {
     font-size: 25px;
