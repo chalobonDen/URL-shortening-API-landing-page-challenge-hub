@@ -5,7 +5,9 @@ const FooterTop = () => {
   return (
     <div className="footer-top">
       <h1>Boost your links today</h1>
-      <button>Get Started</button>
+      <button>
+        <a href="#shortlink">Get Started</a>
+      </button>
     </div>
   );
 };
