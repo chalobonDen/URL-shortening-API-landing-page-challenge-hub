@@ -1,10 +1,11 @@
 .main-shortlink {
   background-image: linear-gradient(to bottom, #fff 50%, #f0f1f6 50%);
+  padding: 0 8rem;
 }
 
-.bg-inputShortlink {
+/* .bg-inputShortlink {
   margin: 0 8rem;
-}
+} */
 .show-result {
   margin: 0 8rem;
 }
@@ -12,18 +13,24 @@
   background: #f0f1f6;
   padding-top: 1rem;
 }
-.input-url {
+.input-bg {
+}
+.input-url,
+.inputError {
   background: url('../../images/bg-shorten-desktop.svg');
   background-color: hsl(257, 27%, 26%);
   width: 100%;
-  height: 90px;
+  height: 120px;
   border-radius: 10px;
 }
-.input-url > div {
+.input-url > div,
+.inputError > div {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  padding-top: 40px;
   justify-content: center;
-  height: 90px;
+  /* height: 120px; */
 }
 .input-url input {
   width: 80%;
@@ -33,10 +40,29 @@
   padding-left: 1.5rem;
   border: none;
 }
-.input-url button {
+.inputError input {
+  width: 80%;
+  border-radius: 6px;
+  height: 40px;
+  margin-right: 1rem;
+  padding-left: 1.5rem;
+  border: 2px solid hsl(0, 87%, 67%);
+}
+.inputError input::placeholder {
+  color: hsl(0, 87%, 67%);
+}
+.input-url button,
+.inputError button {
   width: 12%;
   height: 40px;
   border-radius: 6px;
+}
+.error-message {
+  color: hsl(0, 87%, 67%);
+  font-size: 12px;
+  margin-left: 2rem;
+  font-style: oblique;
+  margin-top: 0.4rem;
 }
 
 .link-url {
@@ -44,11 +70,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
+  margin-top: 1rem;
 
   background: #fff;
   height: 55px;
 }
-.link-left {
+.link-left,
+.link-right {
   font-weight: 500;
 }
 .link-right {
@@ -64,40 +92,62 @@
 .short-link {
   color: hsl(180, 66%, 49%);
 }
+.btn-active-copy {
+  background-color: #3a3053;
+}
+
 @media screen and (max-width: 414px) {
   .main-shortlink {
-    background-image: linear-gradient(to bottom, #fff 50%, #f0f1f6 50%);
+    padding: 1.5rem;
   }
-  .bg-inputShortlink {
-    margin: 1rem;
+  /* .bg-inputShortlink {
+    margin: 1.5rem;
     margin-bottom: 0;
-  }
-  .input-url {
+  } */
+  .input-url,
+  .inputError {
     padding: 1.2rem;
     height: fit-content;
+
+    background: url('../../images/bg-shorten-mobile.svg');
+    background-color: hsl(257, 27%, 26%);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-  .input-url > div {
+  .input-url > div,
+  .inputError > div {
     flex-direction: column;
+    flex-wrap: nowrap;
+    height: 90px;
   }
   .input-url input {
     padding-left: 1rem;
     margin-right: 0;
     width: 100%;
   }
-  .input-url button {
+  .inputError input {
+    padding-left: 1rem;
+    margin-right: 0;
+    width: 100%;
+    border: 1px solid hsl(0, 87%, 67%);
+  }
+  .input-url button,
+  .inputError button {
     margin-top: 1rem;
     width: 100%;
   }
 
   .show-result {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
   }
   .link-url {
     flex-direction: column;
-    /* padding: 1rem; */
     padding: 0;
     height: fit-content;
     align-items: flex-start;
+  }
+  .link-right > button:hover {
+    background-color: #3a3053;
   }
   .link-left {
     margin: 0.6rem 1rem;
@@ -115,7 +165,10 @@
   }
   .link-right > button {
     margin-left: 0;
-    width: calc(100vw - 64px);
+    width: calc(100vw - 5rem);
     margin: 0.5rem 1rem 1rem;
+
+    height: 40px;
+    border-radius: 6px;
   }
 }
