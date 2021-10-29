@@ -17,22 +17,42 @@ const FooterBottom = () => {
 
       <div className="menu-link">
         <p className="title-manu">Features</p>
-        <a className="sub-link">Link Shortening</a>
-        <a className="sub-link">Branded Links</a>
-        <a className="sub-link">Analytics</a>
+        <a href="#shortlink" className="sub-link">
+          Link Shortening
+        </a>
+        <a href="#brandedlink" className="sub-link">
+          Branded Links
+        </a>
+        <a href="#analytics" className="sub-link">
+          Analytics
+        </a>
       </div>
       <div className="menu-link">
         <p className="title-manu">Resources</p>
-        <a className="sub-link">Blog</a>
-        <a className="sub-link">Developers</a>
-        <a className="sub-link">Support</a>
+        <a href="#blog" className="sub-link">
+          Blog
+        </a>
+        <a href="#developers" className="sub-link">
+          Developers
+        </a>
+        <a href="#support" className="sub-link">
+          Support
+        </a>
       </div>
       <div className="menu-link">
         <p className="title-manu">Company</p>
-        <a className="sub-link">About</a>
-        <a className="sub-link">Our Team</a>
-        <a className="sub-link">Careers</a>
-        <a className="sub-link">Contact</a>
+        <a href="#about" className="sub-link">
+          About
+        </a>
+        <a href="#ourteam" className="sub-link">
+          Our Team
+        </a>
+        <a href="#careers" className="sub-link">
+          Careers
+        </a>
+        <a href="#contact" className="sub-link">
+          Contact
+        </a>
       </div>
 
       <div className="social">

@@ -27,7 +27,6 @@
   display: flex;
   height: 15rem;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .menu-link p,
@@ -37,6 +36,7 @@
 }
 .menu-link a {
   display: block;
+  text-decoration: none;
 }
 .menu-link a:hover {
   color: hsl(180, 66%, 49%);
