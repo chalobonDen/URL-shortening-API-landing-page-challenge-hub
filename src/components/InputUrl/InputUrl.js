@@ -1,4 +1,4 @@
-import { memo, useState, createContext, useContext } from 'react';
+import { useState } from 'react';
 import './InputUrl.css';
 
 const InputUrl = () => {
@@ -6,7 +6,24 @@ const InputUrl = () => {
   const [error, setError] = useState('');
   const [btnText, setBtnText] = useState('Shorten It!');
   const [multipleShortLinks, setMultipleShortLinks] = useState([]);
-  const [copyState, setCopyState] = useState(true);
+
+  const onClickCopy = (code) => {
+    const newList = multipleShortLinks.map((val) => {
+      if (val.code === code) {
+        return {
+          ...val,
+          ...{ copy: false },
+        };
+      } else if (val.code !== code) {
+        return {
+          ...val,
+          ...{ copy: true },
+        };
+      }
+      return val;
+    });
+    setMultipleShortLinks(newList);
+  };
 
   const onLinkChange = (e) => {
     setLinkContent(e.target.value);
@@ -16,15 +33,20 @@ const InputUrl = () => {
   const handleShortLink = () => {
     if (!linkContent) {
       setError('Please add a link');
+      console.log('Please add a link');
+      console.log(`error: ${error.length}`);
     } else if (
       !linkContent.includes('http') &&
       !linkContent.includes('https') &&
       !linkContent.includes('www')
     ) {
       setError('Please enter a valid URL');
+      console.log('Please enter a valid URL');
+      console.log(`error: ${error.length}`);
     } else {
       getShortLink();
       setLinkContent('');
+      console.log(`error: ${error.length}`);
     }
   };
 
@@ -34,7 +56,7 @@ const InputUrl = () => {
       (shortLink) => shortLink['original_link'] === linkContent
     );
     if (!existingLink) {
-      setBtnText('Shortening...');
+      setBtnText('Loading...');
       const response = await fetch(longUrl);
       const fetchedShortUrl = await response.json();
       if (fetchedShortUrl.ok) {
@@ -51,20 +73,19 @@ const InputUrl = () => {
   };
 
   return (
-    <main>
+    <main id="shortlink">
       <div className="main-shortlink">
-        <div className="bg-inputShortlink">
-          <div className="input-url">
-            <div>
-              <input
-                type="text"
-                value={linkContent}
-                onChange={(event) => onLinkChange(event)}
-                placeholder="Shorten a link here"
-              />
-              <button onClick={() => handleShortLink()}>Shorten it!</button>
-            </div>
+        <div className={error.length === 0 ? 'input-url' : 'inputError'}>
+          <div>
+            <input
+              type="text"
+              value={linkContent}
+              onChange={(event) => onLinkChange(event)}
+              placeholder="Shorten a link here..."
+            />
+            <button onClick={() => handleShortLink()}>Shorten it!</button>
           </div>
+          <p className="error-message">{error}</p>
         </div>
       </div>
 
@@ -77,15 +98,28 @@ const InputUrl = () => {
               </div>
               <div className="link-right">
                 <div className="short-link">{shortLink.short_link}</div>
-                <button
-                  onClick={() =>
-                    navigator.clipboard.writeText(shortLink.short_link) &&
-                    setCopyState(false)
-                  }
-                >
-                  Copy
-                </button>
+                {shortLink.copy === false ? (
+                  <button
+                    className="btn-active-copy"
+                    onClick={() =>
+                      navigator.clipboard.writeText(shortLink.short_link) &&
+                      onClickCopy(shortLink.code)
+                    }
+                  >
+                    Copied!
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      navigator.clipboard.writeText(shortLink.short_link) &&
+                      onClickCopy(shortLink.code)
+                    }
+                  >
+                    Copy
+                  </button>
+                )}
               </div>
+              {/* {console.log(shortLink.short_link, copyState, index)} */}
             </div>
           ))}
         </div>
