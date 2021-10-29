@@ -33,20 +33,15 @@ const InputUrl = () => {
   const handleShortLink = () => {
     if (!linkContent) {
       setError('Please add a link');
-      console.log('Please add a link');
-      console.log(`error: ${error.length}`);
     } else if (
       !linkContent.includes('http') &&
       !linkContent.includes('https') &&
       !linkContent.includes('www')
     ) {
       setError('Please enter a valid URL');
-      console.log('Please enter a valid URL');
-      console.log(`error: ${error.length}`);
     } else {
       getShortLink();
       setLinkContent('');
-      console.log(`error: ${error.length}`);
     }
   };
 
@@ -83,9 +78,10 @@ const InputUrl = () => {
               onChange={(event) => onLinkChange(event)}
               placeholder="Shorten a link here..."
             />
-            <button onClick={() => handleShortLink()}>Shorten it!</button>
+            <p className="error-message-mobile">{error}</p>
+            <button onClick={() => handleShortLink()}>{btnText}</button>
           </div>
-          <p className="error-message">{error}</p>
+          <p className="error-message-desktop">{error}</p>
         </div>
       </div>
 
@@ -119,7 +115,6 @@ const InputUrl = () => {
                   </button>
                 )}
               </div>
-              {/* {console.log(shortLink.short_link, copyState, index)} */}
             </div>
           ))}
         </div>

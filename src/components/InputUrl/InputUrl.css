@@ -2,18 +2,12 @@
   background-image: linear-gradient(to bottom, #fff 50%, #f0f1f6 50%);
   padding: 0 8rem;
 }
-
-/* .bg-inputShortlink {
-  margin: 0 8rem;
-} */
 .show-result {
   margin: 0 8rem;
 }
 .main-result {
   background: #f0f1f6;
   padding-top: 1rem;
-}
-.input-bg {
 }
 .input-url,
 .inputError {
@@ -57,14 +51,16 @@
   height: 40px;
   border-radius: 6px;
 }
-.error-message {
+.error-message-desktop {
   color: hsl(0, 87%, 67%);
   font-size: 12px;
   margin-left: 2rem;
   font-style: oblique;
   margin-top: 0.4rem;
 }
-
+.error-message-mobile {
+  display: none;
+}
 .link-url {
   display: flex;
   justify-content: space-between;
@@ -100,10 +96,6 @@
   .main-shortlink {
     padding: 1.5rem;
   }
-  /* .bg-inputShortlink {
-    margin: 1.5rem;
-    margin-bottom: 0;
-  } */
   .input-url,
   .inputError {
     padding: 1.2rem;
@@ -119,6 +111,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     height: 90px;
+    padding-top: 0;
   }
   .input-url input {
     padding-left: 1rem;
@@ -131,10 +124,21 @@
     width: 100%;
     border: 1px solid hsl(0, 87%, 67%);
   }
-  .input-url button,
-  .inputError button {
+  .input-url button {
     margin-top: 1rem;
     width: 100%;
+  }
+  .inputError button {
+    width: 100%;
+  }
+  .error-message-desktop {
+    display: none;
+  }
+  .error-message-mobile {
+    display: block;
+    color: hsl(0, 87%, 67%);
+    font-size: 12px;
+    font-style: oblique;
   }
 
   .show-result {
