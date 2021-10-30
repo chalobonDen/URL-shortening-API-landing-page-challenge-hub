@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../images/logo.svg';
 import './Header.css';
 
-const Menu = () => {
+const Menu = ({ clickBurger }) => {
   return (
     <div className="menubar">
       <div className="menu">
@@ -22,6 +22,7 @@ const Menu = () => {
       <div className="burger">
         <img src={logo} alt="" />
         <svg
+          onClick={clickBurger}
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
